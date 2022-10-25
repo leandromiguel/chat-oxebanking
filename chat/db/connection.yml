@@ -4,6 +4,6 @@ dev:
   adapter:  MySQL
   host:     127.0.0.1
   port:     3306
-  database: dev
+  database: chat_devmessage
   username: root
-  password: 
+  password: root
