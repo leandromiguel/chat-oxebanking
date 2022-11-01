@@ -1,11 +1,11 @@
-module Mensagems
+module Messages
 
 import SearchLight: AbstractModel, DbId
 import Base: @kwdef
 
-export Mensagem
+export Message
 
-@kwdef mutable struct Mensagem <: AbstractModel
+@kwdef mutable struct Message <: AbstractModel
   id::DbId = DbId()
 end
 

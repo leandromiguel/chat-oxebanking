@@ -1,4 +1,4 @@
-module MensagemsValidator
+module MessagesValidator
 
 using SearchLight, SearchLight.Validation
 
