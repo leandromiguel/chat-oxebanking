@@ -10,7 +10,8 @@ Conceitos de linguagem de programação - desenvolvimento de um chat para o apli
   - Criada a rota principal da aplicação em *routes.jl*.
   - Criada a conexão com o banco de dados MySQL. Para criar uma conexão com um banco de dados MySQL siga os passo do tópico ***Conexão com o banco de dados MySQL***.
 - #### **Sprint 3**
-  - 
+  - Criada a migration messages.jl para inserir a tabela no banco de dados
+  - A conexão com o banco é realizada com sucesso mas a execussão da migration messages.jl falha por algum motivo. (Uma outra forma de inserção será testada e caso não surta efeito um utro banco de dados será testado)
 - #### **Sprint 4**
   - 
 - #### **Sprint 5**
