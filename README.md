@@ -63,7 +63,7 @@ Siga estas etapas para testar o chat em seu localhost:
     $ julia --project=. server.jl
     ```
 
-    Espere até o servidor reconheça comece a ouvir.
+    Espere até o servidor começar a ouvir.
 
 1. Execute `client.jl` em alguns terminais diferentes e comece a conversar.
     ```
