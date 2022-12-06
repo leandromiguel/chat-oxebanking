@@ -6,16 +6,23 @@ Conceitos de linguagem de programação - desenvolvimento de um chat para o apli
 - #### **Sprint 1**
   - Relatório sobre a linguagem de programação Julia.
 - #### **Sprint 2**
-  - Criada a estrutura inicial do projeto usando a arquitetura MVC, o web service inicia em http://127.0.0.1:3036. Para iniciar a aplicação sigas os passos indicados no tópic ***Carregando e iniciando aplicativos Genie.***
-  - Criada a rota principal da aplicação em *routes.jl*.
-  - Criada a conexão com o banco de dados MySQL. Para criar uma conexão com um banco de dados MySQL siga os passo do tópico ***Conexão com o banco de dados MySQL***.
+  - Criada a estrutura inicial do projeto.
+  - Criada o server.jl.
+  - Criada a conexão com o banco de dados MySQL (conexão ainda apresentando erros).
 - #### **Sprint 3**
-  - Criada a migration messages.jl para inserir a tabela no banco de dados
-  - A conexão com o banco é realizada com sucesso mas a execussão da migration messages.jl falha por algum motivo. (Uma outra forma de inserção será testada e caso não surta efeito um utro banco de dados será testado)
+  - Criada a migration messages.jl para testar a conexão e inserção no banco de daos.
+  - A conexão com o banco de dados é realizada com sucesso mas a execussão da migration messages.jl falha por algum motivo. (Uma outra forma de inserção será testada e caso não surta efeito um utro banco de dados será testado)
 - #### **Sprint 4**
-  - 
+  - Mudança na estrutura do projeto.
+  - Mudança do banco de dados MySQL para SQLite (Poblema de conexão resolvido).
+  - Alteração na forma de conexão e criação das tabelas no banco.
+  - Execução da migration messages.jl realizada com sucesso (Mensagens sendo inseridos no banco de dados com sucesso).
 - #### **Sprint 5**
-  - 
+  - Implementação do client.jl com as funções de iniciar o client.jl e enviar mensagem.
+- #### **Sprint 6**
+  - Implementção das seguintes funções do servidor: enviar_mensagem, sair_do_chat, conectar e iniciarServidor 
+- #### **Sprint 7**
+  - Resumo da linguagem utilizada, o que foi feito (implementação), experiência utilizando a linguagem
 
 #### Julia version
 
@@ -25,30 +32,44 @@ Conceitos de linguagem de programação - desenvolvimento de um chat para o apli
 
 - Genie 5.11.0
 
-#### SearchLight version
+### Getting Started
 
-- SearchLight 2.10.0
+Siga estas etapas para testar o chat em seu localhost:
 
-#### SearchLightMySQL version
+1. Clone o projeto
 
-- SearchLightMySQL 2.4.1
+    ```
+    $ git clone https://github.com/leandromiguel/chat-oxebanking.git
+    ```
 
-#### Carregando e iniciando aplicativos Genie
+1. Vá para o diretório do projeto (`chat-oxebanking`) e inicie o Julia REPL
 
-- No Windows: usando o terminal acesse a pasta bin execute **server.bat**
+    ```
+    $ julia
+    ```
 
-- No MacOS/Linux: usando o terminal acesse a pasta bin execute **server**.
+1. Ative e instancie o projeto do Julia REPL
 
-#### Conexão com o banco de dados MySQL
+    ```
+    julia> import Pkg; Pkg.activate("."); Pkg.instantiate()
+    ```
 
-- Na pasta ***db*** acesse os arquivo ***connection.yml*** e insira os dados de conexão com o banco de dados: ***adapter***: MySQL (padrão do Genie para MySQL)
-  ***database***: nome do banco de dados
-  ***host***: 127.0.0.1 (localhost padrão)
-  ***username***: nome de usuário
-  ***password***: senha
-  ***port***: 3306 (porta padrão para banco de dado MySQL)
-- No terinal digite ***julia*** para acessar o ***REPL*** de linha de comando, em seguida digite os seguintes comandos em seuqência para iniciar a conexão com o banco de dados:  
-  - ***using SearchLightMySQL***
-  - ***using SearchLight***
-  - ***config = SearchLight.Configuration.load()***
-  - ***SearchLight.connect(config)***
+    Isso irá gerar um arquivo `Manifest.toml` dentro do diretório.
+
+1. Saia do REPL
+
+1. Execute `server.jl` no seu terminal
+    ```
+    $ julia --project=. server.jl
+    ```
+
+    Espere até o servidor reconheça comece a ouvir.
+
+1. Execute `client.jl` em alguns terminais diferentes e comece a conversar.
+    ```
+    $ julia --project=. client.jl
+    ```
+
+    Você deverá inserir um nome de usuário. O nome deve ser composto apenas por letras maiúsulas ou minúsculas e seu comprimento deve ser de 1 a 32 caracteres
+
+Vários clientes podem conectar e desconectar e o servidor continuará funcionando. Pressione `Ctrl-c` para sair do servidor.
