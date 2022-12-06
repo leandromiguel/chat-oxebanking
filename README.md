@@ -42,7 +42,7 @@ Siga estas etapas para testar o chat em seu localhost:
     $ git clone https://github.com/leandromiguel/chat-oxebanking.git
     ```
 
-1. Vá para o diretório do projeto (`chat-oxebanking`) e inicie o Julia REPL
+1. Vá para o diretório do projeto (`chat-oxebanking/chat`) e inicie o Julia REPL
 
     ```
     $ julia
